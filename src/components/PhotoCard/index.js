@@ -1,50 +1,18 @@
-import React, { useState, useRef, Fragment, useEffect } from 'react'
+import React, {  Fragment  } from 'react'
+import {useNearScreen} from '../hooks/useNearScreen'
+import {useLocalStorage} from '../hooks/useLocalStorage'
+
 import { ImgWrapper, Button, Image, Article } from './styles'
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
 
 
 export const PhotoCard = ({ id, likes, src }) => {
-    const [show, setShow] = useState(false);
     const key = `like-${id}`;
-
-    const [liked, setLiked] = useState(() =>{
-        try{
-            const like = window.localStorage.getItem(key);
-            return like;
-        }catch{
-            return false
-        }
-    });
-    const ref = useRef(null);
+    const [show, ref] = useNearScreen()
+    const [liked, setLiked] = useLocalStorage(key, false)
 
     const Icon = liked ? MdFavorite : MdFavoriteBorder;
-    const setLocalStorage = (value) => {
-        try{
-            window.localStorage.setItem(key, value);
-            setLiked(value);
-        }catch(e){
-            console.error(e);
-        }
-    }
-
-    useEffect(() => {
-        Promise.resolve(
-            typeof window.IntersectionObserver !== 'undefined'
-                ? window.IntersectionObserver
-                : import('intersection-observer')
-        ).then(() => {
-            const observer = new window.IntersectionObserver(function (entries) {
-                const { isIntersecting } = entries[0]
-                if (isIntersecting) {
-                    setShow(true)
-                    observer.disconnect()
-                }
-            })
-            observer.observe(ref.current)
-        })
-    }, [ref])
-
-
+    
 
     return (
         <Article ref={ref}>
@@ -56,7 +24,7 @@ export const PhotoCard = ({ id, likes, src }) => {
                         </ImgWrapper>
                     </a>
 
-                    <Button onClick={() => { setLocalStorage(!liked) }}>
+                    <Button onClick={() => { setLiked(!liked) }}>
                         <Icon size='32px' />{likes} Likes!
                     </Button>
                 </Fragment>
