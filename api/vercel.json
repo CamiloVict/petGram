@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "petgram-camilo",
+  "alias": ["petgram-api"],
+  "builds": [{ 
+    "use": "@vercel/static-build", 
+    "src": "package.json" }],
+
+  "routes": [{
+			"src": "(.*).js",
+			"dest": "/$1.js"
+		},
+		{
+			"src": "(.*).json",
+			"dest": "/$1.json"
+		},
+		{
+			"src": "/.*",
+			"dest": "index.html"
+		}
+  ]
+}
