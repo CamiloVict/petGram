@@ -5,6 +5,7 @@ import {photos} from '../../../api/db.json'
 
 
 export const PhotoCardList = () => {
+  
     return (
       <List>
           {

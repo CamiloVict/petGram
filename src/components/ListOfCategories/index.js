@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {Category} from '../Category/index'
 import {List, Item} from './styles'
-import {categories as mockCategories} from '../../../api/db.json'
+
+
 export const CategoryList = () => {
 
-  const [categories, setCategories] = useState(mockCategories); //El inicial es un array vacio
+  const [categories, setCategories] = useState([]); 
   
   useEffect(() =>{
-    fetch('URL')
+    fetch('https://petgram-camilo.camilovict.vercel.app/categories')
     .then(res => res.json())
     .then(response => {
       setCategories(response);

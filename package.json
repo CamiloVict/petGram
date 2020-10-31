@@ -1,5 +1,5 @@
 {
-  "name": "curso-platzi-react-avanzado",
+  "name": "petGram",
   "version": "1.0.0",
   "description": "¡Sígueme en Youtube! https://www.youtube.com/midudev",
   "main": "index.js",
@@ -10,7 +10,6 @@
     "dev": "webpack serve --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "vercel-build": "npm run build"
-
   },
   "repository": {
     "type": "git",

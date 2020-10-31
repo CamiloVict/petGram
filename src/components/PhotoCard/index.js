@@ -3,7 +3,7 @@ import {ImgWrapper, Button, Image} from './styles'
 import {MdFavoriteBorder} from 'react-icons/md'
 
 
-export const PhotoCard = ({id,likes=0,src = DEFAULT_IMAGE}) => {
+export const PhotoCard = ({id,likes=0,src}) => {
     return (
         <article>
             <a href = {`/detail/${id}`}>
