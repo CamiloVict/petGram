@@ -4,7 +4,6 @@ const babelRules = [{
   exclude: /node_modules/,
   use: {
     loader: 'babel-loader',
-    plugin: ['@babel/plugin-syntax-dynamic-import'],
     options: {
       presets: ['@babel/preset-env', '@babel/preset-react']
     }

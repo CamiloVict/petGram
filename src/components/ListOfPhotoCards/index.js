@@ -9,7 +9,7 @@ export const PhotoCardList = () => {
     return (
       <List>
           {
-            photos.map(photo => <Item key = {photo.id}> <PhotoCard {...photo}/> </Item>)
+            photos.map(photo => <Item key = {photo.id} id = {photo.id}> <PhotoCard {...photo}/> </Item>)
           }
       </List>
     )
