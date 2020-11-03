@@ -1,5 +1,5 @@
 {
-  "name": "curso-platzi-react-avanzado",
+  "name": "petGram",
   "version": "1.0.0",
   "description": "¡Sígueme en Youtube! https://www.youtube.com/midudev",
   "main": "index.js",
@@ -10,7 +10,6 @@
     "dev": "webpack serve --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "vercel-build": "npm run build"
-
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,13 @@
   },
   "homepage": "https://github.com/midudev/curso-platzi-react-avanzado#readme",
   "dependencies": {
+    "@reach/router": "^1.3.4",
+    "apollo-boost": "^0.4.9",
+    "apollo-client": "^2.6.10",
+    "graphql": "^15.4.0",
+    "intersection-observer": "^0.11.0",
     "react": "^17.0.1",
+    "react-apollo": "^3.1.5",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
     "styled-components": "^5.2.1"
@@ -43,6 +48,7 @@
     "standard": "^16.0.0",
     "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0",
+    "webpack-dev-middleware": "^4.0.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
