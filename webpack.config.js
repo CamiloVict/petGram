@@ -1,14 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const babelRules = [{
-  test: /\.js$/,
-  exclude: /node_modules/,
-  use: {
-    loader: 'babel-loader',
-    options: {
-      presets: ['@babel/preset-env', '@babel/preset-react']
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        plugins: ['@babel/plugin-syntax-dynamic-import'],
+        presets: ['@babel/preset-env', '@babel/preset-react']
+      }
     }
   }
-}]
+]
 
 module.exports = {
   output: {
